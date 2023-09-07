@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { FlavorFusionComponent } from './flavor-fusion/flavor-fusion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { MatIconModule } from '@angular/material/icon';
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SignupComponent } from './signup/signup.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import { SPINNER, NgxUiLoaderConfig, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './shared/material-module';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -37,11 +38,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule,
-    MatSnackBarModule,
     HttpClientModule,
-    MatDialogModule,
-    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
