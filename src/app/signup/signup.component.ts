@@ -20,11 +20,12 @@ export class SignupComponent implements  OnInit{
   signupForm:any = FormGroup;
   responseMessage:any;
 
-  constructor(private formBuilder:FormBuilder,
+  constructor(
+    private formBuilder:FormBuilder,
     private router:Router,
     private userService:UserService,
     private snackbarService:SnackbarService,
-    public dialogfRef:MatDialogRef<SignupComponent>,
+    public dialogRef:MatDialogRef<SignupComponent>,
     private ngxService:NgxUiLoaderService
     ) { }
 
@@ -60,7 +61,7 @@ export class SignupComponent implements  OnInit{
     this.userService.signup(data).subscribe({
       next: (response:any)=>{
       this.ngxService.stop();
-      this.dialogfRef.close();
+      this.dialogRef.close();
       this.responseMessage = response.message;
       this.snackbarService.openSnackBar(this.responseMessage, "");
       this.router.navigate(['/']);
