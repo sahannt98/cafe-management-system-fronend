@@ -15,6 +15,7 @@ import { MaterialModule } from './shared/material-module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginComponent } from './login/login.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -34,7 +35,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HomeComponent,
     DashboardComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
