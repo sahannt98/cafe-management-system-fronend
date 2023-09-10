@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material-module';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -32,7 +33,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     FlavorFusionComponent,
     HomeComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
