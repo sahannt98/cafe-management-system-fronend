@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FlavorFusionComponent } from './flavor-fusion/flavor-fusion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './dashboard/dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { SPINNER, NgxUiLoaderConfig, NgxUiLoaderModule } from 'ngx-ui-loader';
@@ -16,6 +15,9 @@ import { MaterialModule } from './shared/material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
+import { FullComponent } from './layout/full/full.component';
+import { HeaderComponent } from './layout/full/header/header.component';
+import { SidebarComponent } from './layout/full/sidebar/sidebar.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -33,10 +35,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AppComponent,
     FlavorFusionComponent,
     HomeComponent,
-    DashboardComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    LoginComponent
+    LoginComponent,
+    FullComponent,
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

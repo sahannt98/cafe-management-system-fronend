@@ -8,10 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cafe-management-system';
 
-  onInput(event: any) {
-    console.log(event);
-  }
-
 }
 
 
