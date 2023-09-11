@@ -48,6 +48,7 @@ export class RouteGuardService {
       else{
         this.router.navigate(['/']);
         localStorage.clear();
+        return false;
       }
     }
 }
