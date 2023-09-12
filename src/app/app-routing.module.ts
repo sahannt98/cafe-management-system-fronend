@@ -25,7 +25,7 @@ const routes: Routes = [
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
         canActivate: [RouteGuardService],
         data: {
-          expectedRole: ['user', 'admin']
+          expectedRole: ['USER', 'ADMIN']
         }
       }
     ]

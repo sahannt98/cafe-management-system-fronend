@@ -16,8 +16,7 @@ export class RouteGuardService {
     private snackbarService:SnackbarService) { }
 
     canActivate(route:ActivatedRouteSnapshot):boolean{
-      let expectedRoleArray = route.data;
-      expectedRoleArray = expectedRoleArray["expectedRole"];
+      let expectedRoleArray = route.data["expectedRole"];
 
       const token: any = localStorage.getItem('token');
 
@@ -32,12 +31,12 @@ export class RouteGuardService {
 
       let expectedRole = '';
 
-      for(let i = 0; i<expectedRoleArray["length"];i++ ){
+      for(let i = 0; i<expectedRoleArray.length;i++ ){
         if(expectedRoleArray[i] == tokenPayload.role){
           expectedRole = tokenPayload.role;
         }
       }
-      if(tokenPayload.role == 'user' || tokenPayload.role == 'admin'){
+      if(tokenPayload.role == 'USER' || tokenPayload.role == 'ADMIN'){
         if(this.auth.isAuthenticated() && expectedRole == tokenPayload.role){
           return true;
         }

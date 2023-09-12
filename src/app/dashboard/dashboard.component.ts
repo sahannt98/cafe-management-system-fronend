@@ -38,7 +38,7 @@ export class DashboardComponent {
           else{
             this.resposeMessage = GlobalConstants.genericErrorMessage;
           }
-          this.snackbarService.openSnackBar(this.resposeMessage, GlobalConstants.error);
+           this.snackbarService.openSnackBar(this.resposeMessage, GlobalConstants.error);
         }
       })
     }
