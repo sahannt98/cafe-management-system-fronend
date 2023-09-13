@@ -4,7 +4,7 @@
   
   /* Style the body */
   body {
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
   }
   
@@ -140,7 +140,7 @@
     text-decoration: none;
     color: #ffffff;
     position: relative;
-    font-size: 1.25em;
+    font-size: 1em;
     cursor: pointer;
   }
   
@@ -157,7 +157,7 @@
     a.logo {
       margin-top: 1.5em;
       margin-bottom: 1.5em;
-      margin-right: 0px;
+      margin-right: 3px;
     }
     
     ul {
@@ -215,6 +215,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: -1px;
   }
   
   /* Position text in the middle of the page/image */
@@ -234,3 +235,17 @@
     text-align: center;
   }
   
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Adjust the background color as needed */
+    z-index: 100; /* Adjust the z-index as needed */
+  }
+  
+  .links > li > a {
+    font-size: 0.9em;
+  }

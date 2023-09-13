@@ -1,7 +1,22 @@
+
+<div class="sticky-header">
+  <mat-toolbar color="primary">
+    <a href="#" class="logo">
+      <mat-icon>storefront</mat-icon> Cafe Management System
+    </a>
+    <span class="example-spacer"></span>
+    <ul class="links">
+      <li><a (click) = "handleSignupAction()">Signup</a></li>
+      <li><a (click)="handleForgotPasswordAction()">Forgot Password</a></li>
+      <li><a (click)="handleLogin()">Login</a></li>
+    </ul>
+  </mat-toolbar>
+</div>
+
 <div class="bg-image"></div>
 <app-flavor-fusion></app-flavor-fusion>
 
-<div class="wrapper sticky">
+<!-- <div class="wrapper sticky">
   <nav class="navbar-fixed-top">
     <a href="#" class="logo">
       <mat-icon>storefront</mat-icon> Cafe Management System
@@ -12,7 +27,7 @@
       <li><a (click)="handleLogin()">Login</a></li>
     </ul>
   </nav>
-</div>
+</div> -->
 
 <div class="footer" id="signup">
   <p>All right reserved @flavor fusion</p>
