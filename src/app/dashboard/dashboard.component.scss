@@ -78,3 +78,32 @@ body {
       display: block;
     }
   }
+
+  .subtitle{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    // background-color: #7b1fa2;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+   .mat-card{
+    padding:0 ;
+  }
+  
+  .mat-card-content{
+    padding:5px ;
+  }
+
+  .nested-mat {
+    background-color:darkgrey;
+  }
+
+  .title-sub {
+    color: black;
+  }
