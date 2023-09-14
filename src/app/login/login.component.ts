@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit{
       error: (error:any)=>{
         this.ngxService.stop();
         if(error.error.message){
+          console.log(error);
           this.responseMessage = error.error.message;
         }
         else{

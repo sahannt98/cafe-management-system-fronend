@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../services/dashboard.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { SnackbarService } from '../services/snackbar.service';
@@ -9,7 +9,7 @@ import { GlobalConstants } from '../shared/global-constants';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
   resposeMessage:any;
   data:any;
@@ -22,12 +22,15 @@ export class DashboardComponent {
       this.ngxService.start();
       this.dashboardData();
      }
+  ngOnInit(): void {
+  }
 
     dashboardData(){
       this.dashboardService.getDetails().subscribe({
         next: (response:any) => {
           this.ngxService.stop();
           this.data = response;
+          return response;
         },
         error: (error:any) => {
           this.ngxService.stop();
