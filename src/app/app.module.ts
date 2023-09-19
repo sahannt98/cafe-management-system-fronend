@@ -19,6 +19,8 @@ import { FullComponent } from './layout/full/full.component';
 import { HeaderComponent } from './layout/full/header/header.component';
 import { SidebarComponent } from './layout/full/sidebar/sidebar.component';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
+import { LogoutComponent } from './layout/full/logout/logout.component';
+import { ChangePasswordComponent } from './layout/full/change-password/change-password.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Loading...',
@@ -41,7 +43,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     LoginComponent,
     FullComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    LogoutComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
