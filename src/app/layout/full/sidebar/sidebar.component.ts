@@ -13,10 +13,10 @@ export class SidebarComponent {
   token:any = localStorage.getItem('token');
   tokenPayload:any;
   
-  // constructor(
-  //   public menuItems: MenuItems
-  // ) {
-  //   this.tokenPayload = jwt_decode(this.token);
-  //   this.userRole = this.tokenPayload.role;
-  //  }
+  constructor(
+    public menuItems: MenuItems
+  ) {
+    this.tokenPayload = jwt_decode(this.token);
+    this.userRole = this.tokenPayload.role;
+   }
 }
