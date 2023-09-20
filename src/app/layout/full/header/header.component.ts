@@ -34,7 +34,7 @@ export class HeaderComponent {
   
   changePassword(){
     const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '500px'; 
+    dialogConfig.width = '550px'; 
     this.dialog.open(ChangePasswordComponent, dialogConfig);
   }
 }

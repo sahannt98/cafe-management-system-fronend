@@ -13,11 +13,13 @@ import { GlobalConstants } from 'src/app/shared/global-constants';
 })
 export class ChangePasswordComponent implements OnInit{
 
- oldPassword = true;
- newPassword = true;
- confirmPassword = true;
- changePasswordForm:any = FormGroup;
- responseMessage:any;
+oldPassword = true;
+//  newPassword = true;
+//  confirmPassword = true;
+changePasswordForm:any = FormGroup;
+newPassword = true;
+confirmPassword = true;
+responseMessage:any;
 
  constructor(
   private formBuilder:FormBuilder,
@@ -28,25 +30,28 @@ export class ChangePasswordComponent implements OnInit{
  ) { }
 
   ngOnInit(): void {
+
     this.changePasswordForm = this.formBuilder.group({
-      oldPassowrd:[null, Validators.required],
-      newPassword:[null, Validators.required],
-      confirmPassword:[null, Validators.required]
+      oldPassword:[null, [Validators.required]],
+      newPassword:[null, [Validators.required]],
+      confirmPassword:[null, [Validators.required]]
     })
   }
 
-  validateSubmit(){ 
-    if(this.changePasswordForm.controls['newPassword'].value != this.changePasswordForm.controls['confirmPasword'].value){
+  validateSubmit(){
+    if(this.changePasswordForm.controls['newPassword'].value != this.changePasswordForm.controls['confirmPassword'].value){
       return true;
     }
     else{
       return false;
     }
-  } 
+  }
+
 
   handleChangePassword(){
     this.ngxService.start();
     var formData = this.changePasswordForm.value;
+    console.log(formData);
     var data = {
       oldPassword:formData.oldPassword,
       newPassword:formData.newPassword,
