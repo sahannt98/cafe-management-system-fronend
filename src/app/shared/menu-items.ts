@@ -10,7 +10,6 @@ export interface Menu{
 
 const MENUITEMS = [
     {state:'dashboard', name:'Dashboard', type:'link', icon:'dashboard', role:''}
-    {state:'category', name:'Manage Category', type:'link', icon:'dashboard', role:''}
 ]
 
 @Injectable()

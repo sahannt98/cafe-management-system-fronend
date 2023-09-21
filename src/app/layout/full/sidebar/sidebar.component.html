@@ -1,5 +1,5 @@
-<mat-nav-list appAccordion>
-    <!-- <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected"
+<!-- <mat-nav-list appAccordion> -->
+<!-- <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected"
         group="{{menuitem.state}}">
         <a class="" appAccordionToggle [routerLink]="['/cafe/',menuitem.state]"
             *ngIf="menuitem.type === 'link' && (menuitem.role === '' || menuitem.role === userRole)">
@@ -7,4 +7,28 @@
             <span>{{menuitem.name}}</span>
         </a>
     </mat-list-item> -->
-</mat-nav-list>
+<!-- </mat-nav-list> -->
+
+
+<mat-drawer-container>
+        
+    <mat-drawer #drawer opened="true" mode="side">
+        <mat-nav-list>
+    
+            <mat-list-item>
+                <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+            </mat-list-item>
+    
+            <mat-list-item>
+                <button mat-button><mat-icon>category</mat-icon>Category</button>
+            </mat-list-item>
+    
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center; min-height:1000px;">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-drawer-content>
+</mat-drawer-container>

@@ -1,6 +1,6 @@
 <div class="main-container">
     <mat-toolbar color="primary" class="topbar telative">
-        <button mat-icon-button (click)="drawer.toggle()" value="sidebarclosed">
+        <button mat-icon-button (click)="toggleNavbar()" value="sidebarclosed">
             <mat-icon>menu</mat-icon>
         </button>
         
@@ -22,26 +22,8 @@
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container> -->
-    <mat-drawer-container>
-        <mat-drawer #drawer opened="true" mode="side">
-            <mat-nav-list>
 
-                <mat-list-item>
-                    <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
-                </mat-list-item>
-
-                <mat-list-item>
-                    <button mat-button><mat-icon>help</mat-icon>Help</button>
-                </mat-list-item>
-
-            </mat-nav-list>
-        </mat-drawer>
-        <mat-drawer-content>
-            <div style="text-align: center; min-height:1000px;">
-                <router-outlet></router-outlet>
-            </div>
-
-        </mat-drawer-content>
-    </mat-drawer-container>
+    <app-sidebar></app-sidebar>
+    
 
 </div>

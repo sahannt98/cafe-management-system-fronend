@@ -1,5 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
   selector: 'app-full',
@@ -11,6 +13,9 @@ export class FullComponent implements OnDestroy, AfterViewInit {
 
   private _mobileQueryListener: () => void;
 
+  @ViewChild(SidebarComponent) sidebar: any;
+ 
+
   constructor(
     changeDetectorRef: ChangeDetectorRef,
     media: MediaMatcher
@@ -20,8 +25,13 @@ export class FullComponent implements OnDestroy, AfterViewInit {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
+
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
   ngAfterViewInit() { }
+
+  toggleNavbar() {
+    this.sidebar.toggleNavbar();
+  }
 }
