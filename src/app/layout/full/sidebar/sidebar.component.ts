@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuItems } from 'src/app/shared/menu-items';
 import jwt_decode from 'jwt-decode';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,6 +18,7 @@ export class SidebarComponent {
 
   constructor(
     //  public menuItems: MenuItems
+    private router:Router
   ) {
     this.tokenPayload = jwt_decode(this.token);
     this.userRole = this.tokenPayload.role;
@@ -25,4 +27,5 @@ export class SidebarComponent {
   toggleNavbar(){
     this.drawer.toggle();
   }
+
   }

@@ -16,11 +16,15 @@
         <mat-nav-list>
     
             <mat-list-item>
-                <button mat-button><mat-icon>dashboard</mat-icon>Dashboard</button>
+                <button mat-button routerLink="/cafe/dashboard" routerLinkActive="active-link">
+                        <mat-icon>dashboard</mat-icon>Dashboard
+                </button>
             </mat-list-item>
     
-            <mat-list-item>
-                <button mat-button><mat-icon>category</mat-icon>Category</button>
+            <mat-list-item *ngIf="userRole == 'ADMIN'">
+                <button mat-button routerLink="/cafe/category" routerLinkActive="active-link">
+                        <mat-icon>category</mat-icon>Manage Category
+                </button>
             </mat-list-item>
     
         </mat-nav-list>
