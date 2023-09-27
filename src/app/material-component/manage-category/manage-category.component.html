@@ -1,1 +1,21 @@
-<p>manage-category works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Manage Category</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions align="end">
+        <button mat-flat-button color="primary" class="float-right" (click)="handleAddAction()">
+            <mat-icon>add_circle</mat-icon>Add Category
+        </button>
+    </mat-card-actions>
+</mat-card>
+
+<hr>
+
+<mat-card>
+    <mat-card-content align = "start">
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" #input>
+            </mat-form-field>
+    </mat-card-content>
+</mat-card>
