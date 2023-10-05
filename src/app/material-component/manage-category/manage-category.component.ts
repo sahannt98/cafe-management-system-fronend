@@ -6,11 +6,13 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { CategoryService } from 'src/app/services/category.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { GlobalConstants } from 'src/app/shared/global-constants';
+import { MatTableModule } from '@angular/material/table';
+
 
 @Component({
   selector: 'app-manage-category',
   templateUrl: './manage-category.component.html',
-  styleUrls: ['./manage-category.component.scss']
+  styleUrls: ['./manage-category.component.scss'],
 })
 export class ManageCategoryComponent implements OnInit{
 
