@@ -22,7 +22,21 @@
 <mat-card class="table-card">
     <mat-card-content>
         <div class="responsive_table">
-            <h2>Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of dataSource">
+                        <td>{{data.name}}</td>
+                        <td><mat-icon>edit</mat-icon></td>
+                    </tr>
+                </tbody>
+            </table>
+            
         </div>
     </mat-card-content>
 </mat-card>

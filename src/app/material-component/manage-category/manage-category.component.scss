@@ -8,8 +8,45 @@ mat-card {
 }
 
 table {
-    // width: 50%;
-    display: flex;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    // background-color:#7b1fa2;
+    border-bottom: 1px solid #ddd;
+    color: white;
+}
+
+// tr:nth-child(even) {
+//     background-color: #ddd;
+// }
+
+// tr:hover {
+//     background-color: #aaa;
+// }
+
+td>mat-icon {
+    color:aliceblue;
+}
+
+td {
+    justify-content: center;
+    
+}
+
+td>mat-icon:hover {
+    // background-color: #aaa;
+    cursor: pointer;
+}
+
+.edit-icon {
+    color: white; /* Icon color for dark background */
 }
 
 ::ng-deep .highlight{

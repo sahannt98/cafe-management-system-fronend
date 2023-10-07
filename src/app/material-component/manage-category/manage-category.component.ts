@@ -19,6 +19,7 @@ export class ManageCategoryComponent implements OnInit{
   displayedColumns: string[] = ['name', 'edit'];
   dataSource:any;
   responseMessage: any;
+  arr = [1,2,3]
 
   constructor(
     private categoryService: CategoryService,
@@ -33,11 +34,16 @@ export class ManageCategoryComponent implements OnInit{
        this.tableData();
     }
 
+    ngDoCheck(){
+      console.log(this.dataSource);
+    } 
+
     tableData(){
       this.categoryService.getCategory().subscribe({
         next: (response: any) => {
           this.ngxService.stop();
-          this.dataSource = new MatTableDataSource(response);
+          // this.dataSource = new MatTableDataSource(response);
+          this.dataSource = response;
         },
         error: (err: any) => {
           this.ngxService.stop();
