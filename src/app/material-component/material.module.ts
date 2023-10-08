@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialRoutes } from './material.routing';
 import { MaterialModule } from '../shared/material-module';
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
+import { CategoryComponent } from './dialog/category/category.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ManageCategoryComponent } from './manage-category/manage-category.compo
   providers: [],
   declarations: [
   
-    ManageCategoryComponent
+    ManageCategoryComponent,
+        CategoryComponent
   ]
 })
 export class MaterialComponentsModule {}
