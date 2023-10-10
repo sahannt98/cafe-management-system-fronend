@@ -86,6 +86,7 @@ export class ManageCategoryComponent implements OnInit{
         action: "Edit",
         data:values
       };
+      console.log(dialogConfig.data);
       dialogConfig.width = "850px";
       const dialogRef = this.dialog.open(CategoryComponent, dialogConfig);
       this.router.events.subscribe(()=>{

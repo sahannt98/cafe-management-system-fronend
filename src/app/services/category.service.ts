@@ -7,21 +7,21 @@ import { Injectable } from '@angular/core';
 export class CategoryService {
   url = 'http://localhost:8080/api/v1';
 
-  constructor(private htttpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   add(data:any){
-    return this.htttpClient.post(this.url + '/category/add', data, {
+    return this.httpClient.post(this.url + '/category/add', data, {
       headers: new HttpHeaders().set('Content-Type', "application/json")
     });
   }
 
   update(data:any){
-    return this.htttpClient.put(this.url + '/category/update', data, {
+    return this.httpClient.post(this.url + '/category/update', data, {
       headers: new HttpHeaders().set('Content-Type', "application/json")
     });
   }
 
   getCategory(){
-    return this.htttpClient.get(this.url + '/category/get');
+    return this.httpClient.get(this.url + '/category/get');
   }
 }

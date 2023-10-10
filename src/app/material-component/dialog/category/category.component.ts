@@ -33,7 +33,8 @@ export class CategoryComponent implements OnInit{
       if(this.dialogData.action === 'Edit'){
         this.dialogAction = 'Edit';
         this.action = "Update";
-        this.categoryForm.patchvalue(this.dialogData.data);
+        console.log(this.dialogData.data);
+        this.categoryForm.patchValue(this.dialogData.data);
       }
     }
 
