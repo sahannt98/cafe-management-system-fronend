@@ -20,6 +20,40 @@
                 </mat-error>
             </mat-form-field>
         </p>
+
+        <p>
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>Price</mat-label>
+                <input matInput formControlName="price" placeholder="price" required>
+                <mat-error *ngIf="productForm.controls.price.touched && productForm.controls.price.invalid">
+                    <span *ngIf="productForm.controls.price.errors.required">Price is required</span>
+                    <span *ngIf="productForm.controls.price.errors.pattern">Price is invalid</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-label-field appearance="outline" fxFlex>
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="categoryId">
+                    <mat-option *ngFor="let category of categories" [value]="category.id">
+                        {{category.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-label-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description" placeholder="description" required>
+                <mat-error *ngIf="productForm.controls.description.touched && productForm.controls.description.invalid">
+                    <span *ngIf="productForm.controls.description.errors.required">Description is required</span>
+                    <span *ngIf="productForm.controls.description.errors.pattern">Description is invalid</span>
+                </mat-error>
+            </mat-form-field>
+        </p>
+
     </form>
 </mat-dialog-content>
 

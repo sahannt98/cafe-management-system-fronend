@@ -18,7 +18,7 @@ export class ProductComponent implements OnInit {
   dialogAction: any = 'Add';
   action: any = 'Add';
   responseMessage: any;
-  category: any = [];
+  categories: any = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public dialogData: any,
@@ -51,7 +51,7 @@ export class ProductComponent implements OnInit {
   getCategories() {
     this.categoryService.getCategory().subscribe({
       next: (response: any) => {
-        this.category = response;
+        this.categories = response;
       },
       error: (err: any) => {
         console.log(err.error.message);
