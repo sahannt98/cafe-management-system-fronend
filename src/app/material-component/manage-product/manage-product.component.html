@@ -1,0 +1,59 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Manage Product</mat-card-title>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      <button
+        mat-flat-button
+        color="primary"
+        class="float-right"
+        (click)="handleAddAction()"
+      >
+        <mat-icon>add_circle</mat-icon>Add Product
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content align="start">
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="table-card">
+    <mat-card-content>
+      <div class="responsive_table">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of filteredData">
+              <td>{{ data.name }}</td>
+              <td>{{ data.categoryName }}</td>
+              <td></td>
+              <td>{{ data.price }}</td>
+              <td>
+                <button
+                  mat-icon-button
+                  color="primary"
+                  matTooltip="edit"
+                  (click)="handleEditAction(data)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-card-content>
+  </mat-card>

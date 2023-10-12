@@ -26,6 +26,12 @@
                         <mat-icon>category</mat-icon>Manage Category
                 </button>
             </mat-list-item>
+
+            <mat-list-item *ngIf="userRole == 'ADMIN'">
+                <button mat-button routerLink="/cafe/product" routerLinkActive="active-link">
+                        <mat-icon>inventory</mat-icon>Manage product
+                </button>
+            </mat-list-item>
     
         </mat-nav-list>
     </mat-drawer>
