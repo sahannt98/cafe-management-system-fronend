@@ -40,9 +40,9 @@
             <tr *ngFor="let data of filteredData">
               <td>{{ data.name }}</td>
               <td>{{ data.categoryName }}</td>
-              <td></td>
+              <td class="description-cell">{{data.description}}</td>
               <td>{{ data.price }}</td>
-              <td>
+              <td class="action-row">
                 <button
                   mat-icon-button
                   color="primary"
@@ -50,6 +50,15 @@
                   (click)="handleEditAction(data)">
                   <mat-icon>edit</mat-icon>
                 </button>
+                <button
+                  mat-icon-button
+                  color="primary"
+                  matTooltip="edit"
+                  (click)="handleDeleteAction(data)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <mat-slide-toggle (change)="onChange($event.checked,data.id)"
+                matTooltip="Activate or Deactivate Product" [checked]='data.status'></mat-slide-toggle>
               </td>
             </tr>
           </tbody>

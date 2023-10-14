@@ -40,10 +40,10 @@ export class ProductComponent implements OnInit {
       description: [null, Validators.required],
     });
 
-    if (this.dialogAction.action === 'Edit') {
+    if (this.dialogData.action === 'Edit') {
       this.dialogAction = 'Edit';
       this.action = 'Update';
-      this.productForm.patchValue(this.dialogAction.data);
+      this.productForm.patchValue(this.dialogData.data);
     }
     this.getCategories();
   }

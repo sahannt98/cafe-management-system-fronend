@@ -7,6 +7,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { GlobalConstants } from 'src/app/shared/global-constants';
 import { ProductComponent } from '../dialog/product/product.component';
+import { LogoutComponent } from 'src/app/layout/full/logout/logout.component';
 
 @Component({
   selector: 'app-manage-product',
@@ -77,15 +78,95 @@ export class ManageProductComponent implements OnInit {
     dialogConfig.width = "850px";
     const dialogRef = this.dialog.open(ProductComponent, dialogConfig);
     this.router.events.subscribe(()=> {
-      dialogRef.close();
+      // dialogRef.close();
     });
 
-    const sub = dialogRef.componentInstance.onAddProduct.subscribe((response)=>{
+    const sub = dialogRef.componentInstance.onAddProduct.subscribe(()=>{
       this.tableData();
     })
   }
 
-  handleEditAction(data:any){
+  handleEditAction(values:any){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      action: "Edit",
+      data:values
+    }
+    dialogConfig.width = "850px";
+    const dialogRef = this.dialog.open(ProductComponent, dialogConfig);
+    this.router.events.subscribe(()=> {
+      dialogRef.close();
+    });
 
+    const sub = dialogRef.componentInstance.onEditProduct.subscribe(()=>{
+      this.tableData();
+    })
   }
+
+  handleDeleteAction(values:any){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {
+      message: 'delete ' + values.name + ' product',
+      confirmation:true
+    }
+    const dialogRef = this.dialog.open(LogoutComponent, dialogConfig);
+    const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe((response) => {
+      this.ngxService.start();
+      this.deleteProduct(values.id);
+      dialogRef.close();
+    }) 
+  }
+
+  deleteProduct(id:any){
+    this.productService.delete(id).subscribe({
+      next: (response:any) => {
+        this.ngxService.stop();
+        this.tableData();
+        this.responseMessage = response.message;
+        this.snackbarService.openSnackBar(this.responseMessage, "Success")
+      },
+      error: (error:any) => {
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error.message) {
+          this.responseMessage = error.error.message;
+        } else {
+          this.responseMessage = GlobalConstants.genericErrorMessage;
+        }
+        this.snackbarService.openSnackBar(
+          this.responseMessage,
+          GlobalConstants.error
+        );
+      }
+    })
+  }
+
+  onChange(checked:boolean, id:number){
+    this.ngxService.start();
+    var data = {
+      status: checked.toString(),
+      id:id
+    }
+    this.productService.updateStatus(data).subscribe({
+      next: (response:any) => {
+        this.ngxService.stop();
+        this.responseMessage = response.message;
+        this.snackbarService.openSnackBar(this.responseMessage, "Success");
+      },
+      error: (error:any) => {
+        this.ngxService.stop();
+        console.log(error);
+        if (error.error.message) {
+          this.responseMessage = error.error.message;
+        } else {
+          this.responseMessage = GlobalConstants.genericErrorMessage;
+        }
+        this.snackbarService.openSnackBar(
+          this.responseMessage,
+          GlobalConstants.error
+        );
+      }
+    })
+  }
+
 }
