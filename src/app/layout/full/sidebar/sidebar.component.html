@@ -29,7 +29,13 @@
 
             <mat-list-item *ngIf="userRole == 'ADMIN'">
                 <button mat-button routerLink="/cafe/product" routerLinkActive="active-link">
-                        <mat-icon>inventory</mat-icon>Manage product
+                        <mat-icon>inventory</mat-icon>Manage Product
+                </button>
+            </mat-list-item>
+
+            <mat-list-item *ngIf="userRole == 'ADMIN'">
+                <button mat-button routerLink="/cafe/order" routerLinkActive="active-link">
+                        <mat-icon>shopping_cart</mat-icon>Manage Order
                 </button>
             </mat-list-item>
     
