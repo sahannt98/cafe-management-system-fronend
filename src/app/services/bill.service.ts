@@ -14,17 +14,17 @@ export class BillService {
   ) { }
 
     generateReport(data:any){
-      return this.httpClient.post(this.url+"/bill/generatedReport",data,{
+      return this.httpClient.post(this.url+"bill/generateReport",data,{
         headers:new HttpHeaders().set('Content-Type',"application/json")
       })
     }
 
     getPdf(data:any):Observable<Blob>{
-      return this.httpClient.post(this.url+"/bill/getPdf",data,{responseType:'blob'});
+      return this.httpClient.post(this.url+"bill/getPdf",data,{responseType:'blob'});
     }
 
     getBills(){
-      return this.httpClient.get(this.url+"/bill/getBills");
+      return this.httpClient.get(this.url+"bill/getBills");
     }
 
 

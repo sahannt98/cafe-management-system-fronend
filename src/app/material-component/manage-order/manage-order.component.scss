@@ -65,3 +65,14 @@ td>mat-icon:hover {
     vertical-align: middle; /* Vertically align the content */
     word-wrap: break-word; /* Allow the text to wrap to the next line */
   }
+
+  mat-form-field {
+    margin: 10px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    width:150%;
+  }
+  

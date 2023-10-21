@@ -17,7 +17,7 @@ import { GlobalConstants } from 'src/app/shared/global-constants';
 export class ManageOrderComponent implements OnInit {
   dataSource: any = [];
   manageOrderForm: any = FormGroup;
-  category: any = [];
+  categorys: any = [];
   products: any = [];
   price: any;
   totalAmount: number = 0;
@@ -65,7 +65,7 @@ export class ManageOrderComponent implements OnInit {
     this.catgoryService.getFilteredCategories().subscribe({
       next: (response: any) => {
         this.ngxService.stop();
-        this.category = response;
+        this.categorys = response;
       },
       error: (error: any) => {
         this.ngxService.stop();
@@ -186,7 +186,7 @@ export class ManageOrderComponent implements OnInit {
     }
   }
 
-  handledeleteAction(value:any, element:any){
+  handleDeleteAction(value:any, element:any){
     this.totalAmount = this.totalAmount - element.total;
     this.dataSource.splice(value,1);
     this.dataSource = [...this.dataSource];
